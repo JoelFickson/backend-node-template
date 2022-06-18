@@ -2,7 +2,7 @@ import {Application} from "express"
 
 import cluster from "cluster"
 import os from "os"
-import Connection from "../database/Database"
+import Connection from "../database/database"
 
 const numberOfCpus: number = os.cpus().length
 

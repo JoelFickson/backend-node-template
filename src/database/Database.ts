@@ -1,4 +1,4 @@
-import {ConnectOptions} from "mongoose"
+import mongoose, { ConnectOptions } from "mongoose"
 import chalk from 'chalk'
 
 
@@ -27,10 +27,9 @@ class DatabaseConnection {
 
     Connect() {
 
-        const DB = process.env.STAGE === "DEV" ? process.env.DEV_DB : process.env.PROD_DB
+        // const DB = process.env.STAGE === "DEV" ? process.env.DEV_DB : process.env.PROD_DB
 
-        console.log(DB)
-        mongoose.connect(DB, this.options)
+        mongoose.connect("mongodb://localhost:27017/decisions-dev?retryWrites=true", this.options)
 
         mongoose.connection.on('connected', () => {
 
