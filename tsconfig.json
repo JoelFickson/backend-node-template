@@ -1,34 +1,71 @@
 {
-  "compilerOptions": {
-    "target": "es2022",
-    "sourceMap": true,
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "baseUrl": "./src",
-    "allowJs": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
-    "noImplicitReturns": false,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/types/*",
-      "@types/**/*"
+  "ts-node": {
+    "files": true,
+    "require": [
+      "tsconfig-paths/register"
     ]
   },
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "src/*": [
+        "./src"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@context/*": [
+        "context/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@middleware/*": [
+        "middleware/*"
+      ]
+    },
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "es2015",
+      "es2016",
+      "es2017.object"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noErrorTruncation": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": false,
+    "preserveConstEnums": true
+  },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "@types/**/*d.ts"
   ],
   "exclude": [
     "node_modules",
-    "**/*.test.ts"
+    "google-credentials.json"
   ]
 }
