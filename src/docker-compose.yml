@@ -1,0 +1,19 @@
+version: "3"
+services:
+  vwaza_db:
+    image: postgres:16
+    container_name: the_best_db
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${APP_DB_USER}
+      - POSTGRES_PASSWORD=${APP_DB_PASSWORD}
+      - POSTGRES_DB=${APP_DB_NAME}
+    ports:
+      - "5454:5432"
+    volumes:
+      - best_db_data:/data
+
+
+volumes:
+  best_db_data:
