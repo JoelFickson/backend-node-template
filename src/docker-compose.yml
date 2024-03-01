@@ -1,0 +1,18 @@
+version: "3"
+services:
+  developer_db:
+    image: postgres:16
+    container_name: the_best_db
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=postgres //TODO:: Change username
+      - POSTGRES_PASSWORD=Test1234! //TODO:: Change  password
+      - POSTGRES_DB=the_best_db //TODO:: Change database name
+    ports:
+      - "5456:5432" //TODO:: Change this to our own preferred port
+    volumes:
+      - best_db_data:/data
+
+volumes:
+  best_db_data:

@@ -1,10 +1,10 @@
 import express from 'express'
-import ConfigureServer from 'server/configure-server'
-import InitializeServer from 'server/initialize-server'
+import 'reflect-metadata'
+import ConfigureServer from '@config/server/configureServer'
+import InitializeServer from '@config/server/initializeServer'
 
 const app = express()
 app.use(express.json())
-
 
 ConfigureServer(app)
 
